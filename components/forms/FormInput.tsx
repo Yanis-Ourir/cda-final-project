@@ -1,4 +1,3 @@
-// BoxComponent.js
 import {
   AlertCircleIcon,
   Box,
@@ -16,12 +15,14 @@ import {
 import React from 'react';
 import {StyleSheet} from 'react-native';
 
-export default function FormInput(props: {
+interface InputProps {
   label: string;
   helper: string | null;
   error: string | null;
-  type: string;
-}) {
+  type: any;
+}
+
+export default function FormInput({InputProps}: {InputProps: InputProps}) {
   return (
     <Box h="$32" w="$72">
       <FormControl
@@ -32,18 +33,18 @@ export default function FormInput(props: {
         isRequired={false}>
         <FormControlLabel mb="$1">
           <FormControlLabelText style={[styles.textInput]}>
-            {props.label}
+            {InputProps.label}
           </FormControlLabelText>
         </FormControlLabel>
         <Input>
-          <InputField type={props.type} style={[styles.textInput]} />
+          <InputField type={InputProps.type} style={[styles.textInput]} />
         </Input>
         <FormControlHelper>
-          <FormControlHelperText>{props.helper}</FormControlHelperText>
+          <FormControlHelperText>{InputProps.helper}</FormControlHelperText>
         </FormControlHelper>
         <FormControlError>
           <FormControlErrorIcon as={AlertCircleIcon} />
-          <FormControlErrorText>{props.error}</FormControlErrorText>
+          <FormControlErrorText>{InputProps.error}</FormControlErrorText>
         </FormControlError>
       </FormControl>
     </Box>
