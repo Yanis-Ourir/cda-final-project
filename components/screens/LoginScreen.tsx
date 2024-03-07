@@ -14,7 +14,7 @@ import CustomButton from '../forms/CustomButton.tsx';
 
 export default function LoginScreen({navigation}: any) {
   return (
-    <View backgroundColor="#11131F" height="100%">
+    <View backgroundColor="#171923" height="100%">
       <LinearGradient
         p="$16"
         colors={['#c31432', '#240b36']}
@@ -27,6 +27,7 @@ export default function LoginScreen({navigation}: any) {
         <Image
           size="xl"
           borderRadius={100}
+          position="absolute"
           alt="Logo"
           source={{
             uri: 'https://img.freepik.com/premium-vector/sphere-logo-yin-yang-circle-emblem-energy-protection-shield-finance-app-game-branding_177517-1561.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1709683200&semt=ais',
@@ -40,29 +41,31 @@ export default function LoginScreen({navigation}: any) {
             size={'2xl'}
             fontWeight="bold"
             color="white"
-            mt="$5"
+            mt="$24"
             mb="$10"
             textAlign="center">
             Connexion
           </Heading>
           <FormInput
-            InputProps={{
+            inputProps={{
               label: 'Adresse email :',
               helper: null,
               error: "Votre email n'est pas correcte",
               type: 'email',
+              placeholder: null,
             }}
           />
           <FormInput
-            InputProps={{
+            inputProps={{
               label: 'Mot de passe :',
               helper: null,
               type: 'password',
               error: "Votre mot de passe n'est pas correcte",
+              placeholder: null,
             }}
           />
         </VStack>
-        <Text>Pas encore de compte ? Inscrivez-vous</Text>
+        <Text mb="$10">Pas encore de compte ? Inscrivez-vous</Text>
 
         <CustomButton
           ButtonProps={{

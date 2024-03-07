@@ -16,15 +16,20 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 
 interface InputProps {
-  label: string;
+  boxWidth: any | null;
+  boxHeight: any | null;
+  label: string | null;
   helper: string | null;
   error: string | null;
   type: any;
+  placeholder: any | null;
 }
 
-export default function FormInput({InputProps}: {InputProps: InputProps}) {
+export default function FormInput({inputProps}: {inputProps: InputProps}) {
   return (
-    <Box h="$32" w="$72">
+    <Box
+      h={inputProps.boxHeight ? inputProps.boxHeight : '$32'}
+      w={inputProps.boxWidth ? inputProps.boxWidth : '$72'}>
       <FormControl
         size="md"
         isDisabled={false}
@@ -32,27 +37,25 @@ export default function FormInput({InputProps}: {InputProps: InputProps}) {
         isReadOnly={false}
         isRequired={false}>
         <FormControlLabel mb="$1">
-          <FormControlLabelText style={[styles.textInput]}>
-            {InputProps.label}
+          <FormControlLabelText color="white">
+            {inputProps.label}
           </FormControlLabelText>
         </FormControlLabel>
         <Input>
-          <InputField type={InputProps.type} style={[styles.textInput]} />
+          <InputField
+            type={inputProps.type}
+            color="white"
+            placeholder={inputProps.placeholder}
+          />
         </Input>
         <FormControlHelper>
-          <FormControlHelperText>{InputProps.helper}</FormControlHelperText>
+          <FormControlHelperText>{inputProps.helper}</FormControlHelperText>
         </FormControlHelper>
         <FormControlError>
           <FormControlErrorIcon as={AlertCircleIcon} />
-          <FormControlErrorText>{InputProps.error}</FormControlErrorText>
+          <FormControlErrorText>{inputProps.error}</FormControlErrorText>
         </FormControlError>
       </FormControl>
     </Box>
   );
 }
-
-const styles = StyleSheet.create({
-  textInput: {
-    color: 'white',
-  },
-});
