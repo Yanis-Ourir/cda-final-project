@@ -8,9 +8,8 @@ import {
 } from '@gluestack-ui/themed';
 
 import React from 'react';
-import {StyleSheet} from 'react-native';
 
-interface ButtonProps {
+type ButtonProps = {
   label: string;
   size: any;
   action: any;
@@ -18,7 +17,7 @@ interface ButtonProps {
   isFocusVisible: boolean;
   addIcon: string | null;
   buttonColor: string;
-}
+};
 
 export default function CustomButton({
   ButtonProps,

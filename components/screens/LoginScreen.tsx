@@ -49,19 +49,15 @@ export default function LoginScreen({navigation}: any) {
           <FormInput
             inputProps={{
               label: 'Adresse email :',
-              helper: null,
               error: "Votre email n'est pas correcte",
               type: 'email',
-              placeholder: null,
             }}
           />
           <FormInput
             inputProps={{
               label: 'Mot de passe :',
-              helper: null,
               type: 'password',
               error: "Votre mot de passe n'est pas correcte",
-              placeholder: null,
             }}
           />
         </VStack>

@@ -13,17 +13,16 @@ import {
   InputField,
 } from '@gluestack-ui/themed';
 import React from 'react';
-import {StyleSheet} from 'react-native';
 
-interface InputProps {
-  boxWidth: any | null;
-  boxHeight: any | null;
-  label: string | null;
-  helper: string | null;
-  error: string | null;
+type InputProps = {
+  boxWidth?: any;
+  boxHeight?: any;
+  label?: string;
+  helper?: string;
+  error?: string;
   type: any;
-  placeholder: any | null;
-}
+  placeholder?: any;
+};
 
 export default function FormInput({inputProps}: {inputProps: InputProps}) {
   return (

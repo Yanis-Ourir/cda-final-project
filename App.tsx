@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+
 import {
   GluestackUIProvider,
   Image,
@@ -7,6 +7,7 @@ import {
   VStack,
   Heading,
   Text,
+  SafeAreaView,
 } from '@gluestack-ui/themed';
 
 import {config} from '@gluestack-ui/config';
@@ -18,27 +19,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <GluestackUIProvider config={config}>
-        <SafeAreaView style={[styles.container]}>
+        <SafeAreaView height="100%">
           <TabsNavigator />
         </SafeAreaView>
       </GluestackUIProvider>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: '100%',
-    backgroundColor: '#11131F',
-  },
-  title: {
-    fontWeight: 'bold',
-    color: 'white',
-    marginTop: 20,
-    marginBottom: 20,
-    textAlign: 'center',
-  },
-  textInput: {
-    color: 'white',
-  },
-});
